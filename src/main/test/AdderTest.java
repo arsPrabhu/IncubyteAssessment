@@ -43,7 +43,7 @@ class AdderTest {
             result = addObj.add("1,2,3,4,5,6,7");
             assertEquals(28, result);
 
-            result = addObj.add("1\n2,3");
+            result = addObj.add("1\r\n2,3");
             assertEquals(6, result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,9 +54,9 @@ class AdderTest {
     void addWithDelimiterString() {
         Adder addObj = new Adder();
         try {
-            Integer result = addObj.add("//;\n1;2");
-            assertEquals(5, result);
-            result=addObj.add("///\n1/2/3");
+            Integer result = addObj.add("//;\r\n1;2");
+            assertEquals(3, result);
+            result=addObj.add("///\r\n1/2/3");
             assertEquals(6,result);
         } catch (NegativeNumberException | IncorrectFormatException e) {
             e.printStackTrace();

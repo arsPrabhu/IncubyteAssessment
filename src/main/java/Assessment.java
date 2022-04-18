@@ -7,7 +7,7 @@ public class Assessment {
         final Logger logger=Logger.getLogger(Assessment.class);
         Adder adder=new Adder();
         try{
-            System.out.println("The result is "+adder.add("1\n2,3"));
+            System.out.println("The result is "+adder.add("//;\r\n1;2"));
         }catch (Exception e){
 //            logger.error(e.getMessage());
             e.printStackTrace();
