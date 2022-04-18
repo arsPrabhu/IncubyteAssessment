@@ -68,10 +68,17 @@ class AdderTest {
         Adder addObj = new Adder();
         try {
             Integer result = addObj.add("-1,-2,3,4");
-            result = addObj.add("1   2;3,4");
-        } catch (NegativeNumberException e) {
+        } catch (Exception e) {
             assertEquals("Negatives not allowed. The negative numbers are: -1,-2.", e.getMessage());
-        } catch (IncorrectFormatException e) {
+        }
+        try {
+            Integer result1 = addObj.add("1   2;3,4");
+        } catch (Exception e) {
+            assertEquals("Incorrect format provided.", e.getMessage());
+        }
+        try {
+            Integer result2 = addObj.add("1,\r\n");
+        } catch (Exception e) {
             assertEquals("Incorrect format provided.", e.getMessage());
         }
     }
