@@ -45,7 +45,7 @@ class AdderTest {
 
             result = addObj.add("1\n2,3");
             assertEquals(6, result);
-        } catch (NegativeNumberException | IncorrectFormatException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -64,7 +64,7 @@ class AdderTest {
     }
 
     @Test
-    void addWithExceptionString() {
+    void addExceptionString() {
         Adder addObj = new Adder();
         try {
             Integer result = addObj.add("-1,-2,3,4");
